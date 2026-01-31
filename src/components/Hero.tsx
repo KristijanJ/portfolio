@@ -1,0 +1,90 @@
+import developerImg from "/developer.svg";
+
+function Hero() {
+  // const scrollToAbout = () => {
+  //   document.getElementById("about")?.scrollIntoView({ behavior: "smooth" });
+  // };
+
+  return (
+    <section
+      id="hero"
+      className="min-h-screen flex items-center justify-center relative pt-20"
+    >
+      <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
+        {/* Left Content */}
+        <div className="space-y-8">
+          <h1 className="text-6xl lg:text-7xl font-bold leading-tight">
+            Kristijan
+            <br />
+            <span className="text-teal-400">Jovanovski</span>
+          </h1>
+
+          <p className="text-gray-400 leading-relaxed text-xl">
+            Hello, I am a{" "}
+            <span className="text-teal-400 font-semibold">
+              Full-Stack Cloud Engineer
+            </span>
+            {", "}
+            based in Skopje, Macedonia. I build scalable, cloud-native
+            applications and infrastructure on{" "}
+            <span className="text-amber-400 font-semibold">AWS</span>.
+          </p>
+
+          <div className="flex gap-4">
+            <button className="bg-teal-400 hover:bg-teal-300 text-black px-8 py-3 rounded-full font-semibold transition hover:cursor-pointer">
+              Browse projects
+            </button>
+            <a
+              className="bg-amber-400 hover:bg-amber-300 text-black px-8 py-3 rounded-full font-semibold transition flex items-center gap-2 hover:cursor-pointer"
+              href="#about"
+            >
+              About me
+              <svg
+                className="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M19 14l-7 7m0 0l-7-7m7 7V3"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        {/* Right Illustration */}
+        <div className="relative flex items-center justify-center">
+          <div className="relative w-200 max-w-[50vw] flex items-center justify-center flex-col">
+            <img src={developerImg} alt="" />
+          </div>
+        </div>
+      </div>
+
+      {/* Scroll down button */}
+      <a
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 w-16 h-16 border-2 border-gray-600 rounded-lg flex items-center justify-center hover:border-teal-400 transition group hover:cursor-pointer"
+        href="#about"
+      >
+        <svg
+          className="w-6 h-6 group-hover:text-teal-400 transition"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M19 14l-7 7m0 0l-7-7m7 7V3"
+          />
+        </svg>
+      </a>
+    </section>
+  );
+}
+
+export default Hero;
