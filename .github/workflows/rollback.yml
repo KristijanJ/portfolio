@@ -1,21 +1,25 @@
-name: Deploy
-run-name: ${{ github.actor }} is deploying frontend 🚀
+name: Rollback
+run-name: ${{ github.actor }} is rolling back frontend 🚀
 on:
   workflow_dispatch:
+    inputs:
+      commit_sha:
+        description: "Commit SHA to rollback to"
+        required: true
 
 permissions:
   id-token: write
   contents: read
 
 jobs:
-  Deploy:
+  Rollback:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v6
         with:
-          ref: 'main'
+          ref: ${{ github.event.inputs.commit_sha }}
 
       - name: Setup node
         uses: actions/setup-node@v6
