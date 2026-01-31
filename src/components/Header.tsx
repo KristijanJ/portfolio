@@ -18,7 +18,7 @@ function Header() {
             </a>
           </li>
           <li>
-            <a href="#contact" className="hover:text-teal-400 transition">
+            <a href="#footer" className="hover:text-teal-400 transition">
               Contact
             </a>
           </li>
