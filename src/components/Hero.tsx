@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import developerImg from "/developer.svg";
 
 function Hero() {
@@ -31,9 +32,12 @@ function Hero() {
           </p>
 
           <div className="flex gap-4">
-            <button className="bg-teal-400 hover:bg-teal-300 text-black px-8 py-3 rounded-full font-semibold transition hover:cursor-pointer">
+            <Link
+              to="/projects"
+              className="bg-teal-400 hover:bg-teal-300 text-black px-8 py-3 rounded-full font-semibold transition hover:cursor-pointer"
+            >
               Browse projects
-            </button>
+            </Link>
             <a
               className="bg-amber-400 hover:bg-amber-300 text-black px-8 py-3 rounded-full font-semibold transition flex items-center gap-2 hover:cursor-pointer"
               href="#about"
