@@ -5,6 +5,7 @@ import { RouterProvider } from "react-router/dom";
 import "./index.css";
 import Home from "./Home.tsx";
 import Projects from "./Projects.tsx";
+import ProjectDetail from "./ProjectDetail.tsx";
 
 const router = createBrowserRouter([
   {
@@ -14,6 +15,10 @@ const router = createBrowserRouter([
   {
     path: "/projects",
     element: <Projects />,
+  },
+  {
+    path: "/projects/:projectId",
+    element: <ProjectDetail />,
   },
 ]);
 

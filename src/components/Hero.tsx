@@ -36,7 +36,7 @@ function Hero() {
               to="/projects"
               className="bg-teal-400 hover:bg-teal-300 text-black px-8 py-3 rounded-full font-semibold transition hover:cursor-pointer"
             >
-              Browse projects
+              Browse work
             </Link>
             <a
               className="bg-amber-400 hover:bg-amber-300 text-black px-8 py-3 rounded-full font-semibold transition flex items-center gap-2 hover:cursor-pointer"
