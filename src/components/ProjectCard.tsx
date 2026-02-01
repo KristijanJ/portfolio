@@ -1,4 +1,5 @@
 import { Link } from "react-router";
+import Badge from "./Badge";
 
 type ProjectCardProps = {
   id: string;
@@ -32,17 +33,14 @@ function ProjectCard({
         {/* Content */}
         <div className="p-6 flex flex-col grow">
           <div className="flex items-center gap-4 mb-4">
-            <span
-              className={`px-3 py-1 rounded-full text-xs font-semibold ${
-                projectType === "professional"
-                  ? "bg-amber-400/10 text-amber-400 border border-amber-400/20"
-                  : "bg-teal-400/10 text-teal-400 border border-teal-400/20"
-              }`}
+            <Badge
+              size="xs"
+              variant={projectType === "professional" ? "amber" : "teal"}
             >
               {projectType === "professional"
                 ? "Professional Project"
                 : "Personal Project"}
-            </span>
+            </Badge>
           </div>
           <h3 className="text-xl font-bold text-white mb-2 group-hover:text-teal-400 transition">
             {title}
@@ -52,12 +50,9 @@ function ProjectCard({
           {/* Technologies */}
           <div className="flex flex-wrap gap-2 mt-auto">
             {technologies.slice(0, 4).map((tech) => (
-              <span
-                key={tech}
-                className="bg-amber-400/10 text-amber-400 px-3 py-1 rounded-full text-xs font-medium border border-amber-400/20"
-              >
+              <Badge key={tech} size="xs" variant="amber">
                 {tech}
-              </span>
+              </Badge>
             ))}
             {technologies.length > 4 && (
               <span className="text-gray-500 text-xs px-3 py-1">

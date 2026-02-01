@@ -1,4 +1,5 @@
 import { Link } from "react-router";
+import Badge from "./Badge";
 
 export type ProjectTextItem = {
   text: string;
@@ -56,19 +57,20 @@ function Project({ project }: ProjectProps) {
         {/* Header */}
         <div className="space-y-4 mb-12">
           <h1 className="text-2xl md:text-4xl font-bold">{project.title}</h1>
-          {project.subtitle && <p className="text-teal-400 text-xl">{project.subtitle}</p>}
+          {project.subtitle && (
+            <p className="text-teal-400 text-xl">{project.subtitle}</p>
+          )}
           <div className="flex items-center gap-4 mb-4">
-            <span
-              className={`px-4 py-2 rounded-full text-sm font-semibold ${
-                project.projectType === "professional"
-                  ? "bg-amber-400/10 text-amber-400 border border-amber-400/20"
-                  : "bg-teal-400/10 text-teal-400 border border-teal-400/20"
-              }`}
+            <Badge
+              size="sm"
+              variant={
+                project.projectType === "professional" ? "amber" : "teal"
+              }
             >
               {project.projectType === "professional"
                 ? "Professional Project"
                 : "Personal Project"}
-            </span>
+            </Badge>
           </div>
         </div>
 
@@ -110,12 +112,9 @@ function Project({ project }: ProjectProps) {
               </h2>
               <div className="flex flex-wrap gap-3">
                 {project.technologies.map((tech) => (
-                  <span
-                    key={tech}
-                    className="bg-amber-400/10 text-amber-400 px-4 py-2 rounded-full text-sm font-medium border border-amber-400/20"
-                  >
+                  <Badge key={tech} size="sm" variant="amber">
                     {tech}
-                  </span>
+                  </Badge>
                 ))}
               </div>
             </div>
