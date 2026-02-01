@@ -1,5 +1,7 @@
 import { Link } from "react-router";
+import { useState } from "react";
 import Badge from "./Badge";
+import Modal from "./Modal";
 
 export type ProjectTextItem = {
   text: string;
@@ -29,6 +31,8 @@ type ProjectProps = {
 };
 
 function Project({ project }: ProjectProps) {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <section className="min-h-screen flex items-center justify-center md:py-30 py-25">
       <div className="container mx-auto px-6">
@@ -80,7 +84,8 @@ function Project({ project }: ProjectProps) {
             <img
               src={project.image}
               alt={project.imageAlt}
-              className="w-full h-auto"
+              className="w-full h-auto cursor-pointer hover:opacity-80 transition"
+              onClick={() => setIsModalOpen(true)}
             />
           </div>
 
@@ -222,6 +227,15 @@ function Project({ project }: ProjectProps) {
             </div>
           </div>
         )}
+
+        {/* Image Modal */}
+        <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+          <img
+            src={project.image}
+            alt={project.imageAlt}
+            className="max-w-full max-h-full object-contain rounded-lg"
+          />
+        </Modal>
       </div>
     </section>
   );

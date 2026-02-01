@@ -3,7 +3,6 @@ import multiTenantSaasWordpressDiagram from "../assets/projects/multi-tenant-saa
 import portfolioDiagram from "../assets/projects/portfolio/portfolio-architecture.svg";
 import multiTenantPhpApp from "../assets/projects/multi-tenant-php-app/multi-tenant-php-app-architecture.svg";
 import ecommerceMarketplaceApp from "../assets/projects/ecommerce-marketplace-app/ecommerce-marketplace-app-architecture.svg";
-// TODO: Add architecture diagram to ../assets/projects/event-driven-calculation-pipeline/
 import eventDrivenCalculationPipelineApp from "../assets/projects/event-driven-calculation-pipeline-app/event-driven-calculation-pipeline-architecture.svg";
 
 export const multiTenantSaasWordpressProject: ProjectData = {

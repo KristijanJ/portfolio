@@ -1,12 +1,9 @@
 import { Link, useLocation, useNavigate } from "react-router";
+import { navToElement } from "../helpers/navigatior";
 
 function Header() {
   const location = useLocation();
   const navigate = useNavigate();
-
-  const navToElement = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-  };
 
   const navToAbout = () => {
     navigate("/");
@@ -41,9 +38,12 @@ function Header() {
           </li>
           <li>
             {location.pathname === "/" ? (
-              <a href="#about" className="hover:text-teal-400 transition">
+              <button
+                onClick={() => navToElement("about")}
+                className="hover:text-teal-400 transition"
+              >
                 About
-              </a>
+              </button>
             ) : (
               <button
                 onClick={navToAbout}

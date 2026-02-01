@@ -1,5 +1,6 @@
 import { Link } from "react-router";
 import developerImg from "/developer.svg";
+import { navToElement } from "../helpers/navigatior";
 
 function Hero() {
   return (
@@ -34,9 +35,9 @@ function Hero() {
             >
               Browse work
             </Link>
-            <a
+            <button
               className="bg-amber-400 hover:bg-amber-300 text-black px-8 py-3 rounded-full font-semibold transition flex items-center gap-2 hover:cursor-pointer"
-              href="#about"
+              onClick={() => navToElement("about")}
             >
               About me
               <svg
@@ -52,7 +53,7 @@ function Hero() {
                   d="M19 14l-7 7m0 0l-7-7m7 7V3"
                 />
               </svg>
-            </a>
+            </button>
           </div>
         </div>
 
@@ -65,9 +66,9 @@ function Hero() {
       </div>
 
       {/* Scroll down button */}
-      <a
+      <button
         className="absolute bottom-10 left-1/2 -translate-x-1/2 w-16 h-16 border-2 border-gray-600 rounded-lg flex items-center justify-center hover:border-teal-400 transition group hover:cursor-pointer"
-        href="#about"
+        onClick={() => navToElement("about")}
       >
         <svg
           className="w-6 h-6 group-hover:text-teal-400 transition"
@@ -82,7 +83,7 @@ function Hero() {
             d="M19 14l-7 7m0 0l-7-7m7 7V3"
           />
         </svg>
-      </a>
+      </button>
     </section>
   );
 }

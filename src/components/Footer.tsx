@@ -1,4 +1,8 @@
+import { useLocation } from "react-router";
+
 function Footer() {
+  const location = useLocation();
+
   return (
     <footer id="footer" className="bg-[#151f2b] py-12 border-t border-gray-800">
       <div className="container mx-auto px-6">
@@ -59,15 +63,17 @@ function Footer() {
           </a>
         </div>
 
-        <p className="text-gray-700 text-sm text-center">
-          Hero illustration by{" "}
-          <a
-            href="https://iconscout.com/contributors/woobrodesign"
-            className="text-underline font-size-sm"
-          >
-            WOOBRO LTD
-          </a>
-        </p>
+        {location.pathname === "/" && (
+          <p className="text-gray-700 text-sm text-center">
+            Hero illustration by{" "}
+            <a
+              href="https://iconscout.com/contributors/woobrodesign"
+              className="text-underline font-size-sm"
+            >
+              WOOBRO LTD
+            </a>
+          </p>
+        )}
       </div>
     </footer>
   );
