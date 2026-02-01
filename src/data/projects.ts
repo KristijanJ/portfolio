@@ -4,6 +4,7 @@ import portfolioDiagram from "../assets/projects/portfolio/portfolio-architectur
 import multiTenantPhpApp from "../assets/projects/multi-tenant-php-app/multi-tenant-php-app-architecture.svg";
 import ecommerceMarketplaceApp from "../assets/projects/ecommerce-marketplace-app/ecommerce-marketplace-app-architecture.svg";
 import eventDrivenCalculationPipelineApp from "../assets/projects/event-driven-calculation-pipeline-app/event-driven-calculation-pipeline-architecture.svg";
+import aiOrderingChatbotApp from "../assets/projects/ai-ordering-chatbot-app/ai-ordering-chatbot-architecture.svg";
 
 export const multiTenantSaasWordpressProject: ProjectData = {
   id: "multi-tenant-saas-wordpress",
@@ -834,11 +835,200 @@ export const eventDrivenCalculationPipelineProject: ProjectData = {
   ],
 };
 
+export const aiOrderingChatbotProject: ProjectData = {
+  id: "ai-ordering-chatbot",
+  title: "AI-Powered B2B Ordering Chatbot",
+  projectType: "professional",
+  codeAvailability:
+    "This project was built for my employer. The source code is proprietary and cannot be shared publicly.",
+  description: [
+    [
+      { text: "An " },
+      {
+        text: "AI-powered conversational chatbot",
+        className: "text-gray-300 font-semibold",
+      },
+      { text: " built with " },
+      { text: "AWS Bedrock", className: "text-purple-400 font-semibold" },
+      { text: " and " },
+      { text: "Bedrock Agents", className: "text-purple-400 font-semibold" },
+      { text: " to streamline " },
+      {
+        text: "B2B ordering workflows",
+        className: "text-gray-300 font-semibold",
+      },
+      {
+        text: ", enabling users to place orders through natural language conversations instead of navigating traditional web forms.",
+      },
+    ],
+    [
+      { text: "Features " },
+      {
+        text: "real-time bidirectional communication",
+        className: "text-teal-400 font-semibold",
+      },
+      { text: " via " },
+      {
+        text: "AWS WebSocket API",
+        className: "text-amber-400 font-semibold",
+      },
+      { text: " integrated with an " },
+      { text: "Angular", className: "text-red-400 font-semibold" },
+      { text: " frontend chat bubble, " },
+      {
+        text: "context-aware product recommendations",
+        className: "text-teal-400 font-semibold",
+      },
+      { text: " based on previous order history from " },
+      { text: "DynamoDB", className: "text-amber-400 font-semibold" },
+      { text: ", and " },
+      {
+        text: "intelligent missing information handling",
+        className: "text-teal-400 font-semibold",
+      },
+      { text: " (e.g., asking for delivery dates)." },
+    ],
+    [
+      { text: "Handles " },
+      {
+        text: "natural language order requests",
+        className: "text-purple-400 font-semibold",
+      },
+      { text: ' like "I need 20 bananas and 20 tomatoes", automatically ' },
+      {
+        text: "searches the product database",
+        className: "text-teal-400 font-semibold",
+      },
+      { text: ", " },
+      {
+        text: "suggests similar items",
+        className: "text-teal-400 font-semibold",
+      },
+      { text: " from order history, " },
+      {
+        text: "validates the order",
+        className: "text-teal-400 font-semibold",
+      },
+      { text: ", and creates it in " },
+      { text: "DynamoDB", className: "text-amber-400 font-semibold" },
+      { text: " after user confirmation." },
+    ],
+  ],
+  image: aiOrderingChatbotApp,
+  imageAlt: "AI-Powered B2B Ordering Chatbot Architecture",
+  technologies: [
+    "AWS Bedrock",
+    "Bedrock Agents",
+    "AWS Lambda",
+    "WebSocket API",
+    "DynamoDB",
+    "Angular",
+    "TypeScript",
+    "AWS CDK",
+    "CloudWatch",
+  ],
+  whatIBuilt: [
+    [
+      {
+        text: "AWS Bedrock Agent configuration",
+        className: "text-cyan-400 font-semibold",
+      },
+      {
+        text: " with custom prompts and tools for understanding natural language order requests, product lookups, and order creation workflows",
+      },
+    ],
+    [
+      {
+        text: "Real-time WebSocket API",
+        className: "text-cyan-400 font-semibold",
+      },
+      {
+        text: " using AWS API Gateway for bidirectional communication between the Angular frontend and backend, enabling live chatbot interactions",
+      },
+    ],
+    [
+      {
+        text: "Angular chat bubble component",
+        className: "text-cyan-400 font-semibold",
+      },
+      {
+        text: " integrated into existing web application, providing a seamless conversational interface for placing orders",
+      },
+    ],
+    [
+      {
+        text: "Lambda function orchestration",
+        className: "text-cyan-400 font-semibold",
+      },
+      {
+        text: " with routing logic to handle multiple operations: listing products, retrieving previous orders, searching for similar items, and creating new orders in DynamoDB",
+      },
+    ],
+    [
+      {
+        text: "Context-aware recommendation engine",
+        className: "text-cyan-400 font-semibold",
+      },
+      {
+        text: " analyzing previous order history in DynamoDB to suggest relevant products based on user patterns and similar past orders",
+      },
+    ],
+    [
+      {
+        text: "Natural language processing flow",
+        className: "text-cyan-400 font-semibold",
+      },
+      {
+        text: " handling multi-turn conversations, extracting product quantities and types, asking for missing information, and maintaining conversation context",
+      },
+    ],
+    [
+      {
+        text: "Order validation and confirmation",
+        className: "text-cyan-400 font-semibold",
+      },
+      {
+        text: " workflow ensuring all required information is collected, presenting order summary to users, and creating orders only after explicit confirmation",
+      },
+    ],
+    [
+      {
+        text: "Infrastructure as Code with CDK",
+        className: "text-cyan-400 font-semibold",
+      },
+      {
+        text: " using TypeScript to define all AWS resources including Lambda functions, WebSocket API, Bedrock agent configuration, and IAM permissions",
+      },
+    ],
+    [
+      {
+        text: "DynamoDB integration",
+        className: "text-cyan-400 font-semibold",
+      },
+      {
+        text: " working with existing database schema to read product catalog, fetch order history, and create new orders without disrupting the legacy system",
+      },
+    ],
+  ],
+  keyFeatures: [
+    "Natural language order processing",
+    "AWS Bedrock AI agent",
+    "Real-time WebSocket communication",
+    "Context-aware product recommendations",
+    "Multi-turn conversation handling",
+    "Order history analysis",
+    "Angular frontend integration",
+    "Infrastructure as Code with CDK",
+    "DynamoDB integration",
+  ],
+};
+
 // Add more projects here
 export const allProjects: ProjectData[] = [
   multiTenantSaasWordpressProject,
   multiTenantPhpAppProject,
   eventDrivenCalculationPipelineProject,
+  aiOrderingChatbotProject,
   ecommerceMarketplaceAppProject,
   portfolioWebsiteProject,
 ];
