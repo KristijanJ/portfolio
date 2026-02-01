@@ -26,12 +26,12 @@ function About() {
                   What I Build
                 </h3>
                 <ul className="text-gray-400 space-y-2 leading-relaxed">
-                  {whatIBuild.map((itemIBuild) => (
-                    <li className="flex items-start">
+                  {whatIBuild.map((itemIBuild, index) => (
+                    <li key={index} className="flex items-start">
                       <span className="text-amber-400 mr-2">▹</span>
                       <span>
-                        {itemIBuild.map((item) => (
-                          <span className={item.className}>{item.text} </span>
+                        {itemIBuild.map((item, index) => (
+                          <span key={index} className={item.className}>{item.text} </span>
                         ))}
                       </span>
                     </li>
@@ -45,8 +45,8 @@ function About() {
                   Recent Work
                 </h3>
                 <ul className="text-gray-400 space-y-2 leading-relaxed">
-                  {recentWork.map((work) => (
-                    <li className="flex items-start">
+                  {recentWork.map((work, index) => (
+                    <li key={index} className="flex items-start">
                       <span className="text-teal-400 mr-2">✓</span>
                       <span>{work}</span>
                     </li>
