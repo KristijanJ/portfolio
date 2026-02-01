@@ -2,6 +2,7 @@ import { type ProjectData } from "../components/Project";
 import multiTenantSaasWordpressDiagram from "../assets/projects/multi-tenant-saas-wordpress/multi-tenant-saas-wordpress.svg";
 import portfolioDiagram from "../assets/projects/portfolio/portfolio-architecture.svg";
 import multiTenantPhpApp from "../assets/projects/multi-tenant-php-app/multi-tenant-php-app-architecture.svg";
+import ecommerceMarketplaceApp from "../assets/projects/ecommerce-marketplace-app/ecommerce-marketplace-app-architecture.svg";
 
 export const multiTenantSaasWordpressProject: ProjectData = {
   id: "multi-tenant-saas-wordpress",
@@ -464,9 +465,193 @@ export const multiTenantPhpAppProject: ProjectData = {
   ],
 };
 
+export const ecommerceMarketplaceAppProject: ProjectData = {
+  id: "ecommerce-marketplace-app",
+  title: "E-commerce Marketplace Mobile App",
+  projectType: "professional",
+  codeAvailability:
+    "This project was built for my employer. The source code is proprietary and cannot be shared publicly.",
+  description: [
+    [
+      { text: "A " },
+      {
+        text: "cross-platform mobile application",
+        className: "text-gray-300 font-semibold",
+      },
+      { text: " for an " },
+      {
+        text: "e-commerce marketplace",
+        className: "text-gray-300 font-semibold",
+      },
+      { text: ", built with " },
+      { text: "React Native", className: "text-blue-400 font-semibold" },
+      { text: " and " },
+      { text: "Expo", className: "text-blue-400 font-semibold" },
+      {
+        text: ", enabling users to search products, scan barcodes, receive personalized recommendations, and manage their collections.",
+      },
+    ],
+    [
+      { text: "Features " },
+      {
+        text: "barcode scanning with device camera",
+        className: "text-teal-400 font-semibold",
+      },
+      { text: " for product identification, " },
+      {
+        text: "push notifications",
+        className: "text-teal-400 font-semibold",
+      },
+      { text: " for user engagement, " },
+      {
+        text: "Firebase integration",
+        className: "text-amber-400 font-semibold",
+      },
+      { text: " for analytics and crash reporting, and " },
+      {
+        text: "internationalization support",
+        className: "text-teal-400 font-semibold",
+      },
+      { text: " with i18n." },
+    ],
+    [
+      { text: "Deployed to both " },
+      {
+        text: "iOS (TestFlight/App Store)",
+        className: "text-green-400 font-semibold",
+      },
+      { text: " and " },
+      {
+        text: "Android (Google Play)",
+        className: "text-green-400 font-semibold",
+      },
+      { text: " using " },
+      {
+        text: "EAS Build",
+        className: "text-green-400 font-semibold",
+      },
+      {
+        text: " with multiple build profiles for development, preview, and production environments.",
+      },
+    ],
+  ],
+  image: ecommerceMarketplaceApp,
+  imageAlt: "E-commerce Marketplace Mobile App Architecture",
+  technologies: [
+    "React Native",
+    "Expo",
+    "TypeScript",
+    "Expo Router",
+    "React Navigation",
+    "Firebase Analytics",
+    "Firebase Crashlytics",
+    "Expo Camera",
+    "Expo Notifications",
+    "Jest",
+    "React Native Testing Library",
+    "EAS Build",
+    "i18n",
+  ],
+  whatIBuilt: [
+    [
+      {
+        text: "Cross-platform mobile app",
+        className: "text-cyan-400 font-semibold",
+      },
+      {
+        text: " with single codebase for iOS and Android, using React Native and Expo for efficient development and maintenance",
+      },
+    ],
+    [
+      {
+        text: "Barcode scanning functionality",
+        className: "text-cyan-400 font-semibold",
+      },
+      {
+        text: " using Expo Camera for quick product identification and lookup",
+      },
+    ],
+    [
+      {
+        text: "Push notification system",
+        className: "text-cyan-400 font-semibold",
+      },
+      {
+        text: " with Expo Notifications for engaging users with personalized recommendations, alerts, and relevant content",
+      },
+    ],
+    [
+      {
+        text: "Firebase integration",
+        className: "text-cyan-400 font-semibold",
+      },
+      {
+        text: " for real-time analytics tracking, crash reporting with Crashlytics, and monitoring user behavior and app stability",
+      },
+    ],
+    [
+      {
+        text: "File-based routing with Expo Router",
+        className: "text-cyan-400 font-semibold",
+      },
+      {
+        text: " for intuitive navigation structure with drawer navigation, deep linking support, and type-safe routing",
+      },
+    ],
+    [
+      {
+        text: "Comprehensive testing setup",
+        className: "text-cyan-400 font-semibold",
+      },
+      {
+        text: " using Jest and React Native Testing Library with 80% coverage requirement across statements, branches, functions, and lines",
+      },
+    ],
+    [
+      {
+        text: "Production deployment pipeline",
+        className: "text-cyan-400 font-semibold",
+      },
+      {
+        text: " with EAS Build for automated builds, TestFlight distribution for iOS beta testing, and Google Play deployment for Android",
+      },
+    ],
+    [
+      {
+        text: "Developer experience tooling",
+        className: "text-cyan-400 font-semibold",
+      },
+      {
+        text: " with custom Makefile for common tasks, comprehensive documentation, automated testing workflows, and development/preview/production build profiles",
+      },
+    ],
+    [
+      {
+        text: "Internationalization support",
+        className: "text-cyan-400 font-semibold",
+      },
+      {
+        text: " using i18n-js for multi-language support with locale detection and translation management",
+      },
+    ],
+  ],
+  keyFeatures: [
+    "Cross-platform iOS & Android support",
+    "Barcode scanning for product identification",
+    "Push notifications for user engagement",
+    "Firebase Analytics & Crashlytics",
+    "80% test coverage requirement",
+    "EAS Build deployment pipeline",
+    "Internationalization support",
+    "Type-safe navigation with Expo Router",
+    "Comprehensive documentation",
+  ],
+};
+
 // Add more projects here
 export const allProjects: ProjectData[] = [
   multiTenantSaasWordpressProject,
   multiTenantPhpAppProject,
+  ecommerceMarketplaceAppProject,
   portfolioWebsiteProject,
 ];
