@@ -12,7 +12,7 @@ function Projects() {
         <div className="container mx-auto px-6">
           {/* Header */}
           <div className="space-y-4 mb-12">
-            <h1 className="text-5xl lg:text-6xl font-bold">
+            <h1 className="text-3xl md:text-5xl font-bold">
               My <span className="text-teal-400">Work</span>
             </h1>
           </div>

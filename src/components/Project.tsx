@@ -30,7 +30,7 @@ type ProjectProps = {
 
 function Project({ project }: ProjectProps) {
   return (
-    <section className="min-h-screen flex items-center justify-center py-30">
+    <section className="min-h-screen flex items-center justify-center md:py-30 py-25">
       <div className="container mx-auto px-6">
         {/* Back Button */}
         <Link
@@ -55,8 +55,8 @@ function Project({ project }: ProjectProps) {
 
         {/* Header */}
         <div className="space-y-4 mb-12">
-          <h1 className="text-5xl lg:text-6xl font-bold">{project.title}</h1>
-          <p className="text-teal-400 text-xl">{project.subtitle}</p>
+          <h1 className="text-2xl md:text-4xl font-bold">{project.title}</h1>
+          {project.subtitle && <p className="text-teal-400 text-xl">{project.subtitle}</p>}
           <div className="flex items-center gap-4 mb-4">
             <span
               className={`px-4 py-2 rounded-full text-sm font-semibold ${
