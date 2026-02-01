@@ -2,10 +2,6 @@ import { Link } from "react-router";
 import developerImg from "/developer.svg";
 
 function Hero() {
-  // const scrollToAbout = () => {
-  //   document.getElementById("about")?.scrollIntoView({ behavior: "smooth" });
-  // };
-
   return (
     <section
       id="hero"

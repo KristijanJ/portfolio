@@ -6,19 +6,25 @@ import "./index.css";
 import Home from "./Home.tsx";
 import Projects from "./Projects.tsx";
 import ProjectDetail from "./ProjectDetail.tsx";
+import Layout from "./components/Layout.tsx";
 
 const router = createBrowserRouter([
   {
-    path: "/",
-    element: <Home />,
-  },
-  {
-    path: "/projects",
-    element: <Projects />,
-  },
-  {
-    path: "/projects/:projectId",
-    element: <ProjectDetail />,
+    Component: Layout,
+    children: [
+      {
+        index: true,
+        element: <Home />,
+      },
+      {
+        path: "/projects",
+        element: <Projects />,
+      },
+      {
+        path: "/projects/:projectId",
+        element: <ProjectDetail />,
+      },
+    ],
   },
 ]);
 

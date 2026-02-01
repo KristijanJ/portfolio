@@ -8,7 +8,7 @@ function Footer() {
           <a
             href="mailto:kristijan.j92@gmail.com"
             aria-label="Email"
-            className="text-teal-400 border-b-1"
+            className="text-teal-400 border-b"
           >
             kristijan.j92@gmail.com
           </a>

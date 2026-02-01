@@ -1,6 +1,20 @@
-import { Link } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 
 function Header() {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const navToElement = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const navToAbout = () => {
+    navigate("/");
+    setTimeout(() => {
+      navToElement("about");
+    }, 100);
+  };
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-[#0e0f1c]/95 backdrop-blur-sm border-b border-gray-800">
       <nav className="container mx-auto px-6 py-6 flex items-center justify-between">
@@ -12,19 +26,40 @@ function Header() {
         </Link>
         <ul className="flex md:gap-8 gap-4 md:text-base text-sm">
           <li>
-            <a href="#hero" className="hover:text-teal-400 transition">
-              Home
-            </a>
+            {location.pathname === "/" ? (
+              <button
+                onClick={() => navToElement("hero")}
+                className="hover:text-teal-400 transition"
+              >
+                Home
+              </button>
+            ) : (
+              <Link to="/" className="hover:text-teal-400 transition">
+                Home
+              </Link>
+            )}
           </li>
           <li>
-            <a href="#about" className="hover:text-teal-400 transition">
-              About
-            </a>
+            {location.pathname === "/" ? (
+              <a href="#about" className="hover:text-teal-400 transition">
+                About
+              </a>
+            ) : (
+              <button
+                onClick={navToAbout}
+                className="hover:text-teal-400 transition"
+              >
+                About
+              </button>
+            )}
           </li>
           <li>
-            <a href="#footer" className="hover:text-teal-400 transition">
+            <button
+              onClick={() => navToElement("footer")}
+              className="hover:text-teal-400 transition"
+            >
               Contact
-            </a>
+            </button>
           </li>
         </ul>
       </nav>
