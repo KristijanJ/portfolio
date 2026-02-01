@@ -1,10 +1,11 @@
 import { type ProjectData } from "../components/Project";
 import multiTenantSaasWordpressDiagram from "../assets/projects/multi-tenant-saas-wordpress/multi-tenant-saas-wordpress.svg";
 import portfolioDiagram from "../assets/projects/portfolio/portfolio-architecture.svg";
+import multiTenantPhpApp from "../assets/projects/multi-tenant-php-app/multi-tenant-php-app-architecture.svg";
 
 export const multiTenantSaasWordpressProject: ProjectData = {
   id: "multi-tenant-saas-wordpress",
-  title: "Multi-tenant SaaS platform for Wordpress",
+  title: "Multi-tenant SaaS platform for Wordpress - Migration to AWS",
   projectType: "professional",
   codeAvailability:
     "This project was built for my employer. The source code is proprietary and cannot be shared publicly.",
@@ -271,8 +272,201 @@ export const portfolioWebsiteProject: ProjectData = {
   ],
 };
 
+export const multiTenantPhpAppProject: ProjectData = {
+  id: "multi-tenant-php-app",
+  title: "Multi-Tenant PHP app - Migration to AWS",
+  projectType: "professional",
+  codeAvailability:
+    "This project was built for my employer. The source code is proprietary and cannot be shared publicly.",
+  description: [
+    [
+      { text: "A " },
+      {
+        text: "complete infrastructure migration",
+        className: "text-gray-300 font-semibold",
+      },
+      { text: " of " },
+      {
+        text: "multi-tenant PHP application platforms",
+        className: "text-gray-300 font-semibold",
+      },
+      { text: " from legacy hosting to " },
+      { text: "AWS", className: "text-amber-400 font-semibold" },
+      { text: " using " },
+      {
+        text: "Infrastructure as Code",
+        className: "text-teal-400 font-semibold",
+      },
+      { text: "." },
+    ],
+    [
+      { text: "Built with " },
+      { text: "Terraform", className: "text-teal-400 font-semibold" },
+      { text: " featuring " },
+      {
+        text: "per-tenant Auto Scaling Groups",
+        className: "text-teal-400 font-semibold",
+      },
+      { text: " with " },
+      { text: "EC2 instances", className: "text-amber-400 font-semibold" },
+      { text: " running " },
+      {
+        text: "PHP and Nginx",
+        className: "text-gray-300 font-semibold",
+      },
+      { text: ", while sharing core infrastructure including " },
+      {
+        text: "Aurora Serverless v2",
+        className: "text-amber-400 font-semibold",
+      },
+      { text: ", " },
+      {
+        text: "Application Load Balancer",
+        className: "text-amber-400 font-semibold",
+      },
+      { text: ", and " },
+      { text: "EFS storage", className: "text-amber-400 font-semibold" },
+      { text: "." },
+    ],
+    [
+      { text: "Includes " },
+      {
+        text: "comprehensive automation",
+        className: "text-green-400 font-semibold",
+      },
+      { text: " with custom " },
+      { text: "Makefile", className: "text-green-400 font-semibold" },
+      { text: " for Terraform and AWS operations, " },
+      {
+        text: "Bitbucket Pipelines CI/CD",
+        className: "text-green-400 font-semibold",
+      },
+      { text: " for application deployments, and " },
+      {
+        text: "CloudWatch monitoring",
+        className: "text-green-400 font-semibold",
+      },
+      { text: " with per-tenant dashboards and SNS alerting." },
+    ],
+  ],
+  image: multiTenantPhpApp,
+  imageAlt: "Multi-Tenant PHP app Infrastructure Architecture Diagram",
+  technologies: [
+    "Terraform",
+    "AWS VPC",
+    "AWS ALB",
+    "AWS EC2",
+    "Auto Scaling",
+    "Aurora Serverless v2",
+    "AWS EFS",
+    "CloudWatch",
+    "SNS",
+    "Secrets Manager",
+    "IAM",
+    "SSM",
+    "PHP",
+    "Nginx",
+    "Bitbucket Pipelines",
+  ],
+  whatIBuilt: [
+    [
+      {
+        text: "Multi-tenant architecture design",
+        className: "text-teal-400 font-semibold",
+      },
+      {
+        text: " with per-tenant Auto Scaling Groups for isolation while sharing core infrastructure (Aurora, ALB, EFS) for cost efficiency",
+      },
+    ],
+    [
+      {
+        text: "Complete VPC infrastructure",
+        className: "text-teal-400 font-semibold",
+      },
+      {
+        text: " with public, private, and database subnets across 3 Availability Zones, NAT Gateway, and comprehensive security group configuration",
+      },
+    ],
+    [
+      {
+        text: "Aurora Serverless v2 setup",
+        className: "text-teal-400 font-semibold",
+      },
+      {
+        text: " with auto-scaling MySQL-compatible database, automated credential rotation via Secrets Manager, and per-tenant database isolation",
+      },
+    ],
+    [
+      {
+        text: "Custom AMI creation",
+        className: "text-teal-400 font-semibold",
+      },
+      {
+        text: " with PHP, Nginx web server, and Node.js 20 LTS for application runtime",
+      },
+    ],
+    [
+      {
+        text: "ALB with host-based routing",
+        className: "text-teal-400 font-semibold",
+      },
+      {
+        text: " shared across all tenants for efficient traffic distribution and SSL/TLS termination with ACM certificates",
+      },
+    ],
+    [
+      {
+        text: "Comprehensive CloudWatch monitoring",
+        className: "text-teal-400 font-semibold",
+      },
+      {
+        text: " with per-tenant metrics (healthy hosts, response times, error rates), unified dashboards, and SNS alarm notifications",
+      },
+    ],
+    [
+      {
+        text: "Automation tooling",
+        className: "text-teal-400 font-semibold",
+      },
+      {
+        text: " with custom Makefile for streamlined Terraform operations, AWS MFA authentication, and environment management",
+      },
+    ],
+    [
+      {
+        text: "CI/CD pipeline integration",
+        className: "text-teal-400 font-semibold",
+      },
+      {
+        text: " with Bitbucket Pipelines for automated application deployments to per-tenant EC2 instances",
+      },
+    ],
+    [
+      {
+        text: "Bastion server deployment",
+        className: "text-teal-400 font-semibold",
+      },
+      {
+        text: " in public subnet for build management, instance refresh scripts, and secure SSH access via SSM Session Manager",
+      },
+    ],
+  ],
+  keyFeatures: [
+    "Multi-tenant resource isolation",
+    "Shared infrastructure for cost efficiency",
+    "Auto-scaling per tenant",
+    "Aurora Serverless v2 auto-scaling database",
+    "Comprehensive monitoring & alerting",
+    "Infrastructure as Code with Terraform",
+    "Multi-environment support (dev, prod)",
+    "Automated deployments with Bitbucket Pipelines",
+    "Custom AMI with complete runtime stack",
+  ],
+};
+
 // Add more projects here
 export const allProjects: ProjectData[] = [
   multiTenantSaasWordpressProject,
+  multiTenantPhpAppProject,
   portfolioWebsiteProject,
 ];
