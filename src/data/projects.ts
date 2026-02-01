@@ -3,6 +3,8 @@ import multiTenantSaasWordpressDiagram from "../assets/projects/multi-tenant-saa
 import portfolioDiagram from "../assets/projects/portfolio/portfolio-architecture.svg";
 import multiTenantPhpApp from "../assets/projects/multi-tenant-php-app/multi-tenant-php-app-architecture.svg";
 import ecommerceMarketplaceApp from "../assets/projects/ecommerce-marketplace-app/ecommerce-marketplace-app-architecture.svg";
+// TODO: Add architecture diagram to ../assets/projects/event-driven-calculation-pipeline/
+import eventDrivenCalculationPipelineApp from "../assets/projects/event-driven-calculation-pipeline-app/event-driven-calculation-pipeline-architecture.svg";
 
 export const multiTenantSaasWordpressProject: ProjectData = {
   id: "multi-tenant-saas-wordpress",
@@ -648,10 +650,196 @@ export const ecommerceMarketplaceAppProject: ProjectData = {
   ],
 };
 
+export const eventDrivenCalculationPipelineProject: ProjectData = {
+  id: "event-driven-calculation-pipeline",
+  title: "Event-Driven Financial Calculation Pipeline",
+  projectType: "professional",
+  codeAvailability:
+    "This project was built for my employer. The source code is proprietary and cannot be shared publicly.",
+  description: [
+    [
+      { text: "A " },
+      {
+        text: "complex event-driven serverless application",
+        className: "text-gray-300 font-semibold",
+      },
+      { text: " built with " },
+      { text: "Python", className: "text-blue-400 font-semibold" },
+      { text: " and " },
+      { text: "AWS CDK", className: "text-amber-400 font-semibold" },
+      { text: " for automated " },
+      {
+        text: "financial calculations",
+        className: "text-gray-300 font-semibold",
+      },
+      {
+        text: " based on data from multiple 3rd party APIs, running on scheduled intervals (once or twice daily).",
+      },
+    ],
+    [
+      { text: "Features " },
+      {
+        text: "sophisticated retry logic",
+        className: "text-teal-400 font-semibold",
+      },
+      { text: " with " },
+      { text: "SQS", className: "text-amber-400 font-semibold" },
+      { text: " and " },
+      { text: "Step Functions", className: "text-amber-400 font-semibold" },
+      { text: " to handle " },
+      {
+        text: "incomplete or delayed data from external APIs",
+        className: "text-teal-400 font-semibold",
+      },
+      { text: ", including " },
+      {
+        text: "12-hour wait periods",
+        className: "text-teal-400 font-semibold",
+      },
+      { text: " for data availability checks and " },
+      {
+        text: "rate limit management",
+        className: "text-teal-400 font-semibold",
+      },
+      { text: " for API calls." },
+    ],
+    [
+      { text: "Orchestrates multiple " },
+      { text: "Lambda functions", className: "text-amber-400 font-semibold" },
+      { text: " via " },
+      { text: "EventBridge", className: "text-amber-400 font-semibold" },
+      {
+        text: " cron jobs, coordinating data validation, unprocessed data tracking in ",
+      },
+      { text: "DynamoDB", className: "text-amber-400 font-semibold" },
+      { text: ", and calculation workflows with " },
+      {
+        text: "comprehensive monitoring",
+        className: "text-green-400 font-semibold",
+      },
+      { text: " via " },
+      {
+        text: "CloudWatch alarms and metrics",
+        className: "text-green-400 font-semibold",
+      },
+      { text: "." },
+    ],
+  ],
+  image: eventDrivenCalculationPipelineApp,
+  imageAlt: "Event-Driven Financial Calculation Pipeline Architecture",
+  technologies: [
+    "Python",
+    "AWS CDK",
+    "AWS Lambda",
+    "EventBridge",
+    "SQS",
+    "Step Functions",
+    "DynamoDB",
+    "S3",
+    "CloudWatch",
+    "CloudWatch Alarms",
+  ],
+  whatIBuilt: [
+    [
+      {
+        text: "Event-driven serverless architecture",
+        className: "text-cyan-400 font-semibold",
+      },
+      {
+        text: " with EventBridge cron jobs triggering Lambda functions on scheduled intervals, coordinated via SQS queues for decoupling and reliability",
+      },
+    ],
+    [
+      {
+        text: "Infrastructure as Code with AWS CDK",
+        className: "text-cyan-400 font-semibold",
+      },
+      {
+        text: " using Python to define the entire infrastructure including Lambda functions, Step Functions, DynamoDB tables, SQS queues, and EventBridge rules",
+      },
+    ],
+    [
+      {
+        text: "Sophisticated retry mechanism",
+        className: "text-cyan-400 font-semibold",
+      },
+      {
+        text: " handling incomplete or delayed data from 3rd party APIs with separate retry flows, Step Functions for long-running waits (12+ hours), and automatic failure recovery",
+      },
+    ],
+    [
+      {
+        text: "Data validation and tracking",
+        className: "text-cyan-400 font-semibold",
+      },
+      {
+        text: " checking if all required data is available, storing unprocessed items in DynamoDB, and automatically retrying calculations when data becomes available",
+      },
+    ],
+    [
+      {
+        text: "Step Functions workflows",
+        className: "text-cyan-400 font-semibold",
+      },
+      {
+        text: " for complex orchestration including API data fetching with timeout controls to avoid rate limits, wait states for delayed retries, and error handling with exponential backoff",
+      },
+    ],
+    [
+      {
+        text: "3rd party API integration",
+        className: "text-cyan-400 font-semibold",
+      },
+      {
+        text: " with robust error handling for unreliable external APIs, including retry logic on failures, rate limiting, and data consistency checks",
+      },
+    ],
+    [
+      {
+        text: "DynamoDB data management",
+        className: "text-cyan-400 font-semibold",
+      },
+      {
+        text: " with multiple tables for storing raw data, calculation results, and tracking unprocessed items with read/write/delete operations across the pipeline",
+      },
+    ],
+    [
+      {
+        text: "Comprehensive monitoring",
+        className: "text-cyan-400 font-semibold",
+      },
+      {
+        text: " with CloudWatch Logs for all Lambda functions, custom metrics for tracking processing status, and CloudWatch Alarms for failures, delays, and retry exhaustion",
+      },
+    ],
+    [
+      {
+        text: "Multi-flow orchestration",
+        className: "text-cyan-400 font-semibold",
+      },
+      {
+        text: " coordinating separate data ingestion flow, validation flow, calculation flow, and retry flow with proper message passing and state management",
+      },
+    ],
+  ],
+  keyFeatures: [
+    "Event-driven serverless architecture",
+    "Infrastructure as Code with Python CDK",
+    "Sophisticated retry and error handling",
+    "12-hour wait periods for data availability",
+    "Rate limit management for API calls",
+    "DynamoDB for data persistence",
+    "Step Functions for complex workflows",
+    "CloudWatch monitoring and alarms",
+    "SQS for reliable message queuing",
+  ],
+};
+
 // Add more projects here
 export const allProjects: ProjectData[] = [
   multiTenantSaasWordpressProject,
   multiTenantPhpAppProject,
+  eventDrivenCalculationPipelineProject,
   ecommerceMarketplaceAppProject,
   portfolioWebsiteProject,
 ];
