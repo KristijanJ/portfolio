@@ -8,4 +8,4 @@ Here you can see some of the projects I've worked on in my professional career a
 
 ## Infrastructure
 
-The infrastructure for this project can be found at [Github Portfolio Infra](https://github.com/KristijanJ/portfolio)
+The infrastructure for this project can be found at [Github Portfolio Infra](https://github.com/KristijanJ/portfolio-infra)
