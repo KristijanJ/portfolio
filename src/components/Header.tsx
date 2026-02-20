@@ -1,16 +1,8 @@
-import { Link, useLocation, useNavigate } from "react-router";
+import { Link, useLocation } from "react-router";
 import { navToElement } from "../helpers/navigatior";
 
 function Header() {
   const location = useLocation();
-  const navigate = useNavigate();
-
-  const navToAbout = () => {
-    navigate("/");
-    setTimeout(() => {
-      navToElement("about");
-    }, 100);
-  };
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-[#0e0f1c]/95 backdrop-blur-sm border-b border-gray-800">
@@ -37,21 +29,9 @@ function Header() {
             )}
           </li>
           <li>
-            {location.pathname === "/" ? (
-              <button
-                onClick={() => navToElement("about")}
-                className="hover:text-teal-400 transition"
-              >
-                About
-              </button>
-            ) : (
-              <button
-                onClick={navToAbout}
-                className="hover:text-teal-400 transition"
-              >
-                About
-              </button>
-            )}
+            <Link to="/projects" className="hover:text-teal-400 transition">
+              Projects
+            </Link>
           </li>
           <li>
             <button

@@ -31,29 +31,10 @@ function Hero() {
           <div className="flex gap-4">
             <Link
               to="/projects"
-              className="bg-teal-400 hover:bg-teal-300 text-black px-8 py-3 rounded-full font-semibold transition hover:cursor-pointer"
+              className="bg-amber-400 hover:bg-amber-300 text-black px-20 py-3 rounded-full font-semibold transition hover:cursor-pointer"
             >
               Browse work
             </Link>
-            <button
-              className="bg-amber-400 hover:bg-amber-300 text-black px-8 py-3 rounded-full font-semibold transition flex items-center gap-2 hover:cursor-pointer"
-              onClick={() => navToElement("about")}
-            >
-              About me
-              <svg
-                className="w-5 h-5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M19 14l-7 7m0 0l-7-7m7 7V3"
-                />
-              </svg>
-            </button>
           </div>
         </div>
 

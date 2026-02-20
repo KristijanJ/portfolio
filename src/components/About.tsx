@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import { getRecentWork, getWhatIBuild } from "../services/experienceList";
 
 function About() {
@@ -31,7 +32,9 @@ function About() {
                       <span className="text-amber-400 mr-2">▹</span>
                       <span>
                         {itemIBuild.map((item, index) => (
-                          <span key={index} className={item.className}>{item.text} </span>
+                          <span key={index} className={item.className}>
+                            {item.text}{" "}
+                          </span>
                         ))}
                       </span>
                     </li>
@@ -53,6 +56,15 @@ function About() {
                   ))}
                 </ul>
               </div>
+            </div>
+
+            <div className="flex gap-4 justify-center">
+              <Link
+                to="/projects"
+                className="bg-amber-400 hover:bg-amber-300 text-black px-20 py-3 rounded-full font-semibold transition hover:cursor-pointer"
+              >
+                Browse work
+              </Link>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
