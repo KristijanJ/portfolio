@@ -5,6 +5,7 @@ import multiTenantPhpApp from "../assets/projects/multi-tenant-php-app/multi-ten
 import ecommerceMarketplaceApp from "../assets/projects/ecommerce-marketplace-app/ecommerce-marketplace-app-architecture.svg";
 import eventDrivenCalculationPipelineApp from "../assets/projects/event-driven-calculation-pipeline-app/event-driven-calculation-pipeline-architecture.svg";
 import aiOrderingChatbotApp from "../assets/projects/ai-ordering-chatbot-app/ai-ordering-chatbot-architecture.svg";
+import ecommerceShopDiagram from "../assets/projects/ecommerce-shop-app/ecommerce-shop-app-architecture.svg";
 
 export const multiTenantSaasWordpressProject: ProjectData = {
   id: "multi-tenant-saas-wordpress",
@@ -1023,8 +1024,238 @@ export const aiOrderingChatbotProject: ProjectData = {
   ],
 };
 
+export const ecommerceShopProject: ProjectData = {
+  id: "ecommerce-shop",
+  title: "Ecommerce Shop — Fullstack Kubernetes GitOps Platform",
+  projectType: "personal",
+  codeAvailability: "",
+  description: [
+    [
+      { text: "A full-stack ecommerce platform built from scratch — " },
+      { text: "Next.js 16", className: "text-blue-400 font-semibold" },
+      { text: " frontend with Server Actions and Redis-backed cart, " },
+      { text: "Express.js", className: "text-blue-400 font-semibold" },
+      { text: " REST API with " },
+      { text: "Prisma ORM", className: "text-blue-400 font-semibold" },
+      { text: " and " },
+      { text: "PostgreSQL", className: "text-blue-400 font-semibold" },
+      {
+        text: ", role-based access control, and JWT authentication. Both apps containerised and running on ",
+      },
+      { text: "Kubernetes (KinD)", className: "text-amber-400 font-semibold" },
+      { text: " modelled after " },
+      { text: "AWS EKS", className: "text-amber-400 font-semibold" },
+      { text: "." },
+    ],
+    [
+      { text: "The platform is managed entirely with " },
+      { text: "GitOps via ArgoCD", className: "text-teal-400 font-semibold" },
+      { text: " using the " },
+      {
+        text: "App of Apps pattern",
+        className: "text-teal-400 font-semibold",
+      },
+      { text: " and " },
+      {
+        text: "Kustomize base/overlay",
+        className: "text-teal-400 font-semibold",
+      },
+      {
+        text: " for environment management. Secrets are managed with ",
+      },
+      { text: "Vault + External Secrets Operator", className: "text-teal-400 font-semibold" },
+      { text: " — no credentials ever touch Git." },
+    ],
+    [
+      { text: "Observability is covered by the " },
+      {
+        text: "PLG stack",
+        className: "text-green-400 font-semibold",
+      },
+      { text: " (Prometheus + Loki + Grafana) with " },
+      { text: "Promtail", className: "text-green-400 font-semibold" },
+      {
+        text: " shipping structured JSON logs from every pod. Security is enforced with ",
+      },
+      {
+        text: "Kubernetes NetworkPolicies",
+        className: "text-green-400 font-semibold",
+      },
+      { text: " (default-deny with explicit allow rules per namespace)." },
+    ],
+    [
+      {
+        text: "CI/CD is intentionally absent for now",
+        className: "text-gray-400 font-semibold",
+      },
+      {
+        text: " — GitHub Actions runners have no route to a local KinD cluster, so a full build → push → deploy pipeline isn't possible here. The next step is migrating to a ",
+        className: "text-gray-400",
+      },
+      { text: "Proxmox", className: "text-gray-300 font-semibold" },
+      {
+        text: " or ",
+        className: "text-gray-400",
+      },
+      { text: "AWS-hosted", className: "text-gray-300 font-semibold" },
+      {
+        text: " cluster to close the loop: push code → build image → push to registry → update image tag in the gitops repo → ArgoCD deploys.",
+        className: "text-gray-400",
+      },
+    ],
+    [
+      {
+        text: "Personal learning project, actively in development",
+        className: "text-gray-400 font-semibold",
+      },
+      {
+        text: " — built to go end-to-end on the full lifecycle: writing application code, containerising it, and running it on Kubernetes with production-level tooling.",
+        className: "text-gray-400",
+      },
+    ],
+  ],
+  image: ecommerceShopDiagram,
+  imageAlt: "Ecommerce Shop Kubernetes GitOps Architecture",
+  technologies: [
+    "Kubernetes (KinD)",
+    "ArgoCD",
+    "Kustomize",
+    "Traefik",
+    "Vault",
+    "External Secrets Operator",
+    "Prometheus",
+    "Grafana",
+    "Loki",
+    "Promtail",
+    "NetworkPolicy",
+    "HPA",
+    "Next.js",
+    "Express.js",
+    "Prisma",
+    "PostgreSQL",
+    "Redis",
+    "TypeScript",
+    "Docker",
+    "pino",
+  ],
+  whatIBuilt: [
+    [
+      {
+        text: "GitOps platform with ArgoCD App of Apps",
+        className: "text-teal-400 font-semibold",
+      },
+      {
+        text: " — a single root Application watches the gitops repo and manages all platform components and application deployments declaratively, with prune and self-heal enabled",
+      },
+    ],
+    [
+      {
+        text: "Full-stack application",
+        className: "text-teal-400 font-semibold",
+      },
+      {
+        text: " — Next.js 16 frontend with Server Actions, App Router, and Redis-backed cart persistence. Express.js REST API with Prisma ORM, role-based access control, and JWT authentication",
+      },
+    ],
+    [
+      {
+        text: "Kustomize base/overlay structure",
+        className: "text-teal-400 font-semibold",
+      },
+      {
+        text: " separating environment-agnostic base manifests from environment-specific overlays (local KinD, planned EKS), with namePrefix isolation per environment",
+      },
+    ],
+    [
+      {
+        text: "Secrets management with Vault + ESO",
+        className: "text-teal-400 font-semibold",
+      },
+      {
+        text: " — no secrets in Git. ExternalSecret resources act as pointers; ESO pulls values from Vault and creates Kubernetes Secrets. Swappable to AWS Secrets Manager by changing the ClusterSecretStore backend",
+      },
+    ],
+    [
+      {
+        text: "Deployment ordering with ArgoCD sync-waves",
+        className: "text-teal-400 font-semibold",
+      },
+      {
+        text: " — ExternalSecret (wave -2) creates secrets before the Prisma migration Job (wave -1) runs, which completes before application pods (wave 0) start. The migration Job is an ArgoCD hook with BeforeHookCreation delete policy to handle Job spec immutability",
+      },
+    ],
+    [
+      {
+        text: "Full PLG observability stack",
+        className: "text-teal-400 font-semibold",
+      },
+      {
+        text: " — Prometheus for cluster metrics, Loki for log aggregation, Grafana for unified dashboards. Promtail DaemonSet ships logs from every pod. Both apps use pino for structured JSON logging queryable via LogQL",
+      },
+    ],
+    [
+      {
+        text: "Kubernetes NetworkPolicies",
+        className: "text-teal-400 font-semibold",
+      },
+      {
+        text: " — default-deny-all in both application namespaces with explicit allow rules: Traefik → apps, frontend → backend, frontend → Redis, backend → PostgreSQL, all pods → CoreDNS. Verified with before/after connectivity tests",
+      },
+    ],
+    [
+      {
+        text: "Reliability: HPA, PDB, health probes",
+        className: "text-teal-400 font-semibold",
+      },
+      {
+        text: " — HorizontalPodAutoscaler on both frontend and backend, PodDisruptionBudgets for minimum availability during node drains, and liveness/readiness probes on /health and /ready endpoints",
+      },
+    ],
+    [
+      {
+        text: "Traefik ingress with HTTPS",
+        className: "text-teal-400 font-semibold",
+      },
+      {
+        text: " — DaemonSet on control-plane node with hostPort 80/443, wildcard DNS via traefik.me, self-signed TLS",
+      },
+    ],
+  ],
+  keyFeatures: [
+    "GitOps with ArgoCD App of Apps pattern",
+    "Kustomize base/overlay for environment management",
+    "Vault + ESO secrets management (no secrets in Git)",
+    "PLG observability stack (Prometheus + Loki + Grafana)",
+    "Structured JSON logging with pino",
+    "Kubernetes NetworkPolicies (default-deny)",
+    "ArgoCD sync-waves for ordered deployment",
+    "HPA + PDB for reliability and autoscaling",
+    "Local KinD cluster modelled after AWS EKS",
+    "4-repo structure: gitops, frontend, backend, infra",
+  ],
+  links: [
+    {
+      url: "https://github.com/KristijanJ/ecommerce-shop-gitops",
+      text: "GitOps Repo",
+    },
+    {
+      url: "https://github.com/KristijanJ/ecommerce-shop-be",
+      text: "Backend Repo",
+    },
+    {
+      url: "https://github.com/KristijanJ/ecommerce-shop-fe",
+      text: "Frontend Repo",
+    },
+    {
+      url: "https://github.com/KristijanJ/ecommerce-infra",
+      text: "Infra Repo",
+    },
+  ],
+};
+
 // Add more projects here
 export const allProjects: ProjectData[] = [
+  ecommerceShopProject,
   multiTenantSaasWordpressProject,
   multiTenantPhpAppProject,
   eventDrivenCalculationPipelineProject,
