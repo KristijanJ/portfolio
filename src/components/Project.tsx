@@ -125,7 +125,7 @@ function Project({ project }: ProjectProps) {
 
             {/* Links or Code Availability Message */}
             <div className="space-y-4">
-              <div className="flex gap-2">
+              <div className="flex gap-2 flex-wrap">
                 {project.links &&
                   project.links.map((link, index) => (
                     <a
