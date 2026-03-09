@@ -665,8 +665,10 @@ export const eventDrivenCalculationPipelineProject: ProjectData = {
         className: "text-gray-300 font-semibold",
       },
       { text: " built with " },
-      { text: "Python", className: "text-blue-400 font-semibold" },
+      { text: "Node.js", className: "text-blue-400 font-semibold" },
       { text: " and " },
+      { text: "Python", className: "text-blue-400 font-semibold" },
+      { text: ", deployed with " },
       { text: "AWS CDK", className: "text-amber-400 font-semibold" },
       { text: " for automated " },
       {
@@ -729,6 +731,7 @@ export const eventDrivenCalculationPipelineProject: ProjectData = {
   image: eventDrivenCalculationPipelineApp,
   imageAlt: "Event-Driven Financial Calculation Pipeline Architecture",
   technologies: [
+    "Node.js",
     "Python",
     "AWS CDK",
     "AWS Lambda",
@@ -756,7 +759,7 @@ export const eventDrivenCalculationPipelineProject: ProjectData = {
         className: "text-cyan-400 font-semibold",
       },
       {
-        text: " using Python to define the entire infrastructure including Lambda functions, Step Functions, DynamoDB tables, SQS queues, and EventBridge rules",
+        text: " using Node.js and Python to define the entire infrastructure including Lambda functions, Step Functions, DynamoDB tables, SQS queues, and EventBridge rules",
       },
     ],
     [
@@ -825,7 +828,7 @@ export const eventDrivenCalculationPipelineProject: ProjectData = {
   ],
   keyFeatures: [
     "Event-driven serverless architecture",
-    "Infrastructure as Code with Python CDK",
+    "Infrastructure as Code with Node.js CDK",
     "Sophisticated retry and error handling",
     "12-hour wait periods for data availability",
     "Rate limit management for API calls",
