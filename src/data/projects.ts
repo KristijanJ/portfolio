@@ -1045,8 +1045,10 @@ export const ecommerceShopProject: ProjectData = {
       {
         text: ", role-based access control, and JWT authentication. Both apps containerised and running on ",
       },
-      { text: "Kubernetes (KinD)", className: "text-amber-400 font-semibold" },
-      { text: " modelled after " },
+      { text: "k3s", className: "text-amber-400 font-semibold" },
+      { text: " on a " },
+      { text: "Proxmox homelab", className: "text-amber-400 font-semibold" },
+      { text: " (1 control-plane + 2 workers), modelled after " },
       { text: "AWS EKS", className: "text-amber-400 font-semibold" },
       { text: "." },
     ],
@@ -1088,21 +1090,11 @@ export const ecommerceShopProject: ProjectData = {
     ],
     [
       {
-        text: "CI/CD is intentionally absent for now",
+        text: "CI/CD is still a work in progress",
         className: "text-gray-400 font-semibold",
       },
       {
-        text: " — GitHub Actions runners have no route to a local KinD cluster, so a full build → push → deploy pipeline isn't possible here. The next step is migrating to a ",
-        className: "text-gray-400",
-      },
-      { text: "Proxmox", className: "text-gray-300 font-semibold" },
-      {
-        text: " or ",
-        className: "text-gray-400",
-      },
-      { text: "AWS-hosted", className: "text-gray-300 font-semibold" },
-      {
-        text: " cluster to close the loop: push code → build image → push to registry → update image tag in the gitops repo → ArgoCD deploys.",
+        text: " — the cluster is reachable on the homelab network, so the path is clear: push code → build image → push to registry → update image tag in the GitOps repo → ArgoCD deploys. A self-hosted GitHub Actions runner on the homelab will close the loop.",
         className: "text-gray-400",
       },
     ],
@@ -1120,7 +1112,9 @@ export const ecommerceShopProject: ProjectData = {
   image: ecommerceShopDiagram,
   imageAlt: "Ecommerce Shop Kubernetes GitOps Architecture",
   technologies: [
-    "Kubernetes (KinD)",
+    "k3s",
+    "Proxmox",
+    "Ansible",
     "ArgoCD",
     "Kustomize",
     "Traefik",
@@ -1166,7 +1160,7 @@ export const ecommerceShopProject: ProjectData = {
         className: "text-teal-400 font-semibold",
       },
       {
-        text: " separating environment-agnostic base manifests from environment-specific overlays (local KinD, planned EKS), with namePrefix isolation per environment",
+        text: " separating environment-agnostic base manifests from environment-specific overlays (local KinD, Proxmox homelab, planned EKS), with namePrefix isolation per environment",
       },
     ],
     [
@@ -1233,7 +1227,7 @@ export const ecommerceShopProject: ProjectData = {
     "Kubernetes NetworkPolicies (default-deny)",
     "ArgoCD sync-waves for ordered deployment",
     "HPA + PDB for reliability and autoscaling",
-    "Local KinD cluster modelled after AWS EKS",
+    "Proxmox homelab cluster (k3s) modelled after AWS EKS",
     "4-repo structure: gitops, frontend, backend, infra",
   ],
   links: [
